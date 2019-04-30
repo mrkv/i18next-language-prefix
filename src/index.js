@@ -1,3 +1,6 @@
+import { getQueryVariable } from './utils';
+const queryPrefix = getQueryVariable('prefix');
+
 class LanguagePrefix {
   constructor(opts = {}) {
     this.name = `languagePrefix`;
@@ -5,7 +8,8 @@ class LanguagePrefix {
   }
 
   process(value, key, options, translator) {
-    return translator.language + value;
+    debugger;
+    return((queryPrefix !== false) ? translator.language + value + translator.language : value);
   }
 }
 
