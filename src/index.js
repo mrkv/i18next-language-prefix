@@ -8,7 +8,6 @@ class LanguagePrefix {
   }
 
   process(value, key, options, translator) {
-    debugger;
     return((queryPrefix !== false) ? translator.language + value + translator.language : value);
   }
 }
